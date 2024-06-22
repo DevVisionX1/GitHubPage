@@ -4,6 +4,12 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
 }
 
 header {
@@ -17,12 +23,34 @@ header h1 {
     margin: 0;
 }
 
+#theme-toggle {
+    background: #fff;
+    color: #333;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+body.dark-mode #theme-toggle {
+    background: #333;
+    color: #fff;
+}
+
 main {
     padding: 1rem;
 }
 
 section {
     margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 ul {
@@ -36,6 +64,10 @@ li {
     padding: 1rem;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+body.dark-mode li {
+    background: #444;
 }
 
 footer {
@@ -56,4 +88,12 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+body.dark-mode a {
+    color: #fff;
+}
+
+button:hover {
+    opacity: 0.8;
 }
