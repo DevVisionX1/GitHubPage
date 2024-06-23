@@ -1,14 +1,16 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
     transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal */
 }
 
 body.dark-mode {
-    background-color: #333;
+    background-color: #121212;
     color: #fff;
 }
 
@@ -16,84 +18,80 @@ header {
     background: #333;
     color: #fff;
     padding: 1rem 0;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
-header h1 {
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
     margin: 0;
+    display: flex;
 }
 
-#theme-toggle {
-    background: #fff;
-    color: #333;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
+nav li {
+    margin-right: 2rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff5722;
+}
+
+.title {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 10rem;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+.title p {
+    font-size: 1.2rem;
     margin-top: 1rem;
 }
 
-body.dark-mode #theme-toggle {
-    background: #333;
-    color: #fff;
-}
-
 main {
-    padding: 1rem;
+    padding-top: 10rem; /* Añade espacio superior equivalente a la altura del encabezado */
 }
 
-section {
-    margin-bottom: 2rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s, transform 0.5s;
+.section {
+    padding: 2rem 0;
+    margin: 0 auto;
+    text-align: center;
 }
 
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    background: #fff;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-body.dark-mode li {
-    background: #444;
+.section-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 footer {
-    background: #333;
-    color: #fff;
     text-align: center;
     padding: 1rem 0;
-    margin-top: 2rem;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-}
-
-a {
-    color: #333;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-body.dark-mode a {
+    background: #333;
     color: #fff;
-}
-
-button:hover {
-    opacity: 0.8;
+    position: relative; /* Cambia a posición relativa */
+    clear: both; /* Limpia el float */
+    width: 100%;
 }
